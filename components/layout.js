@@ -6,7 +6,7 @@ import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 const name = "Hong😜";
-export const siteTitle = "Next.js Sample Website";
+export const siteTitle = "My First Next.js Page";
 
 // ; 하나 잘못붙였다고 error 뜬다  오타아아아악!!!!!!!!!!!!!!
 export default function Layout({children, home}) {
