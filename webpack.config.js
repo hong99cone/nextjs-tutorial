@@ -1,17 +1,17 @@
-// webpack.config.js
+/** @type {import('next').NextConfig} */
 
-const Dotenv = require('dotenv-webpack')
-
-module.exports = {
-  plugins: [
-    new Dotenv()
-  ],
+const nextConfig = {
+    reactStrictMode: true,
+    webpack: (config, { isServer }) => {
+      // Fixes npm packages that depend on `fs` module
+      if (!isServer) {
+        config.node = {
+          fs: 'empty'
+        }
+      }
   
-  resolve: {
-    fallback: {
-        "fs": false,
-        "path": false ,
-        "os": false
+      return config
     }
-  }
-}
+  };
+  
+  module.exports = nextConfig;
