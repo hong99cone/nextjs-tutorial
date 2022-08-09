@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import profileImg from '/images/sample.png';
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
@@ -10,7 +11,7 @@ export const siteTitle = "Next.js Sample Website";
 // ; 하나 잘못붙였다고 error 뜬다  오타아아아악!!!!!!!!!!!!!!
 export default function Layout({children, home}) {
     return (
-      <div className="{style.container}">
+      <div className={styles.container}>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <meta
@@ -30,10 +31,10 @@ export default function Layout({children, home}) {
             {home? (
                 <>
                 {/* 이미지 안뜨는 이유 도대체 뭔데에에ㅔㅔㅔㅔㄱ!!!!!!!!!!!!! */}
-                {/* 업그레이드 해야함 11.05 이후로 업데이트 시켜줘야함! */}
+                {/* 업그레이드 해야함 11.05 이후로 업데이트 시켜줘야함! -> latest 인데?!!!! 왜 안됄까요~~*/}
                 <Image
                     priority
-                    src = '/images/sample.png'
+                    src = {profileImg}
                     className = {utilStyles.borderCircle}
                     height = {140}
                     width = {140}
@@ -47,7 +48,7 @@ export default function Layout({children, home}) {
                         <a>
                             <Image
                                 priority
-                                src ='/images/profile.png'
+                                src ='/images/sample.png'
                                 className={utilStyles.borderCircle}
                                 height = {108}
                                 width = {108}
@@ -74,3 +75,4 @@ export default function Layout({children, home}) {
       </div>
     );
 }
+
